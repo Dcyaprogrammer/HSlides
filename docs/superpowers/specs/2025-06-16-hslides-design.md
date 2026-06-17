@@ -39,12 +39,15 @@ HSlides is a neo-brutalist discovery platform for HTML slides, inspired by Dribb
 - **Lucide React** — Icons
 
 ### Data Layer
-- **Simple JSON file** (`/data/slides.json`) — Manual curation
-- **Static export** — Zero server costs, CDN deployment
+- **Phase 1 (Prototype):** Simple JSON file (`/data/slides.json`) — Manual curation
+- **Phase 2 (Future):** Supabase PostgreSQL database — Dynamic content, user uploads
+- **Migration path:** JSON structure designed to map directly to Supabase tables
 
 ### Deployment
-- Vercel, Netlify, or GitHub Pages
-- Static site generation
+- **Vercel** — Frontend hosting and CI/CD
+- **Supabase** — Backend database and future API services
+- **Phase 1:** Static export on Vercel (JSON data)
+- **Phase 2:** Dynamic Next.js app with Supabase integration
 
 ## Data Model
 
@@ -271,6 +274,66 @@ HSlides/
 - Color contrast meets WCAG AA
 - Semantic HTML structure
 
+## Deployment Strategy
+
+### Vercel + Supabase Architecture
+
+**Why this stack:**
+- **Vercel:** Zero-config deployment, preview branches, edge caching, automatic HTTPS
+- **Supabase:** PostgreSQL database, auth ready for Phase 2, real-time subscriptions, storage for thumbnails
+
+**Phase 1 (Prototype):**
+- Deploy Next.js static export to Vercel
+- Supabase project created but minimal usage
+- JSON file for data (no database queries)
+- Thumbnails in `/public/thumbnails/`
+
+**Phase 2 (Future):**
+- Migrate to dynamic Next.js on Vercel
+- Supabase PostgreSQL for slides table
+- Supabase Storage for thumbnail images
+- Supabase Auth for user accounts
+- API routes for CRUD operations
+
+### Supabase Setup (Preparation for Phase 2)
+
+Even in Phase 1, set up Supabase to avoid migration work:
+
+1. **Create Supabase Project**
+   - Set up free tier project
+   - Save environment variables (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
+
+2. **Database Schema (Ready for Migration)**
+   ```sql
+   CREATE TABLE slides (
+     id TEXT PRIMARY KEY,
+     title TEXT NOT NULL,
+     description TEXT,
+     thumbnail TEXT,
+     source_url TEXT,
+     github_url TEXT,
+     prompt TEXT,
+     author_name TEXT,
+     author_url TEXT,
+     tags TEXT[],
+     featured BOOLEAN DEFAULT false,
+     created_at TIMESTAMP DEFAULT NOW()
+   );
+   ```
+
+3. **Storage Bucket**
+   - Create `thumbnails` bucket in Supabase Storage
+   - Configure RLS policies for public read access
+
+4. **Environment Variables**
+   ```env
+   # .env.local (Vercel)
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+   ```
+
+This preparation allows seamless migration from JSON → Supabase without architecture changes.
+
 ## Implementation Notes
 
 ### Neo-Brutalism UI Library Integration
@@ -290,6 +353,15 @@ HSlides/
 2. Generate thumbnails manually or with screenshot tool
 3. Place thumbnails in `/public/thumbnails/`
 4. Test grid layout with varied aspect ratios
+
+### Supabase Preparation (Do During Setup)
+1. Create Supabase project (free tier)
+2. Set up environment variables in `.env.local` and Vercel
+3. Create database schema (matches JSON structure)
+4. Set up Storage bucket for future thumbnail hosting
+5. Document migration path from JSON to Supabase queries
+
+**Note:** Supabase setup during prototype phase prevents major refactoring when transitioning to dynamic content in Phase 2.
 
 ## Success Criteria
 
@@ -321,6 +393,13 @@ HSlides/
 
 **Technical Debt Tracking:**
 - Manual thumbnail generation → automate
-- Hardcoded JSON → database/backend
-- No caching → implement CDN caching
+- JSON data → Supabase PostgreSQL migration
+- Local thumbnails → Supabase Storage
 - No analytics → add usage tracking
+- No auth → Supabase Authentication integration
+
+**Supabase Migration Path:**
+- JSON structure mirrors Supabase table schema
+- Component queries already designed for async data fetching
+- Environment variables configured from day one
+- No architectural changes needed for migration
