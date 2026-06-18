@@ -4,7 +4,7 @@ import { ActionButton } from './ActionButton';
 
 export function Header() {
   return (
-    <header className="border-b-3 border-black bg-white">
+    <header className="border-b-[3px] border-black bg-white">
       <div className="mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="hover:text-gray-700 transition-colors">
           <h1 className="font-extrabold tracking-tight">HSLIDES</h1>

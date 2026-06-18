@@ -59,13 +59,13 @@ export function SlideModal({ slide, isOpen, onClose }: SlideModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white border-4 border-black shadow-brutal-lg max-w-5xl w-full p-6 animate-scale-in max-h-[90vh] overflow-y-auto"
+        className="bg-white border-[4px] border-black shadow-brutal-lg max-w-5xl w-full p-6 animate-scale-in max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 border-2 border-black bg-yellow hover:shadow-brutal"
+          className="absolute top-4 right-4 p-2 border-[2px] border-black bg-yellow hover:shadow-brutal"
           aria-label="Close modal"
         >
           <X size={24} />
@@ -77,7 +77,7 @@ export function SlideModal({ slide, isOpen, onClose }: SlideModalProps) {
         </h2>
 
         {/* Iframe container */}
-        <div className="aspect-video border-3 border-black bg-gray-100 mb-6">
+        <div className="aspect-video border-[3px] border-black bg-gray-100 mb-6">
           <iframe
             src={slide.sourceUrl}
             className="w-full h-full"

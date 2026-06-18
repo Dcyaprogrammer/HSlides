@@ -34,7 +34,7 @@ export function SlideCard({ slide, onClick, colorVariant }: SlideCardProps) {
         'group hover:z-10'
       )}
     >
-      <div className="relative aspect-video mb-3 overflow-hidden border-3 border-black bg-gradient-to-br">
+      <div className="relative aspect-video mb-3 overflow-hidden border-[3px] border-black bg-gradient-to-br">
         <div
           className={cn(
             'absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity',
