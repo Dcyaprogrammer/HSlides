@@ -1,0 +1,77 @@
+[
+  {
+    "id": "01",
+    "title": "Modern React Patterns",
+    "description": "Explore advanced React patterns for building scalable applications",
+    "thumbnail": "/thumbnails/react-patterns.png",
+    "sourceUrl": "https://react-patterns.vercel.app",
+    "githubUrl": "https://github.com/username/react-patterns",
+    "prompt": "Create a presentation about advanced React patterns including compound components, render props, and custom hooks. Use modern design with code examples.",
+    "author": {
+      "name": "Jane Developer",
+      "url": "https://github.com/janedev"
+    },
+    "tags": ["react", "patterns", "frontend"],
+    "featured": true
+  },
+  {
+    "id": "02",
+    "title": "Design Systems 101",
+    "description": "Building scalable design systems with tokens and components",
+    "thumbnail": "/thumbnails/design-systems.png",
+    "sourceUrl": "https://design-systems.vercel.app",
+    "githubUrl": "https://github.com/username/design-systems",
+    "prompt": "Create a beginner-friendly introduction to design systems, covering tokens, components, and documentation.",
+    "author": {
+      "name": "Alex Designer",
+      "url": "https://github.com/alexdesigner"
+    },
+    "tags": ["design-systems", "ui", "tokens"],
+    "featured": true
+  },
+  {
+    "id": "03",
+    "title": "CSS Grid Mastery",
+    "description": "Advanced layout techniques with CSS Grid",
+    "thumbnail": "/thumbnails/css-grid.png",
+    "sourceUrl": "https://css-grid.vercel.app",
+    "githubUrl": "https://github.com/username/css-grid",
+    "prompt": "Create a comprehensive guide to CSS Grid with visual examples and real-world layout patterns.",
+    "author": {
+      "name": "Sam CSS",
+      "url": "https://github.com/samcss"
+    },
+    "tags": ["css", "grid", "layout"],
+    "featured": false
+  },
+  {
+    "id": "04",
+    "title": "TypeScript Best Practices",
+    "description": "Write better TypeScript with practical patterns",
+    "thumbnail": "/thumbnails/typescript.png",
+    "sourceUrl": "https://typescript-patterns.vercel.app",
+    "githubUrl": "https://github.com/username/typescript-patterns",
+    "prompt": "Create a presentation on TypeScript best practices, including types, generics, and utility types.",
+    "author": {
+      "name": "Taylor Typed",
+      "url": "https://github.com/taylortyped"
+    },
+    "tags": ["typescript", "types", "patterns"],
+    "featured": false
+  },
+  {
+    "id": "05",
+    "title": "Accessibility Fundamentals",
+    "description": "Building inclusive web experiences",
+    "thumbnail": "/thumbnails/a11y.png",
+    "sourceUrl": "https://a11y-fundamentals.vercel.app",
+    "githubUrl": "https://github.com/username/a11y",
+    "prompt": "Create an accessible presentation covering ARIA, keyboard navigation, and screen readers.",
+    "author": {
+      "name": "Casey A11y",
+      "url": "https://github.com/caseya11y"
+    },
+    "tags": ["a11y", "accessibility", "inclusive"],
+    "featured": true
+  }
+]
