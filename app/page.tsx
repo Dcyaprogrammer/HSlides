@@ -25,10 +25,10 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
       <div className="mb-12">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+        <h1 className="text-5xl md:text-6xl font-semibold mb-4">
           HSlides
         </h1>
         <p className="text-xl text-gray-600">

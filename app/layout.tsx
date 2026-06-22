@@ -3,7 +3,12 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from './components/Header';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  adjustFontSizeFallback: true,
+});
 
 export const metadata: Metadata = {
   title: 'HSlides - HTML Slides Platform for Everyone',

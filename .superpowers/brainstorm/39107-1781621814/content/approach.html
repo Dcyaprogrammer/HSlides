@@ -1,0 +1,99 @@
+<h2>Which architectural approach fits your vision?</h2>
+<p class="subtitle">Choose the foundation for your HTML slides platform</p>
+
+<style>
+  .framework-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 4px 4px 0 0;
+  }
+</style>
+
+<div class="options">
+  <div class="option" data-choice="simple" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Simple JSON Data <span class="framework-tag">Recommended for MVP</span></h3>
+      <p>Store slide metadata in <code>data/slides.json</code>. Hardcoded thumbnails, instant deployment, zero configuration.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Fastest to build (few hours)</li>
+            <li>Dead simple to edit</li>
+            <li>Perfect for 5-10 slides</li>
+            <li>Easy to export as static site</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Manual thumbnail management</li>
+            <li>Need to rebuild for content changes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="mdx" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>MDX Content Collections</h3>
+      <p>Store each slide deck as an <code>.mdx</code> file with frontmatter. Type-safe, elegant content management.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Better for future growth</li>
+            <li>Easy to add blog/docs later</li>
+            <li>Git-friendly content editing</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Slightly more complex setup</li>
+            <li>Overkill for 5-10 slides</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hybrid GitHub Integration</h3>
+      <p>Fetch slide data dynamically from GitHub repos. Automated content discovery.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Automated content updates</li>
+            <li>Direct repo links</li>
+            <li>Scales to hundreds of slides</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Requires GitHub API setup</li>
+            <li>Rate limiting concerns</li>
+            <li>Much more complex</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>My Recommendation: Option A (Simple JSON)</h3>
+  <p>For a 5-10 slide prototype, JSON is perfect. You can iterate instantly, swap thumbnails easily, and migrate to MDX later if needed. Keep it simple first.</p>
+</div>

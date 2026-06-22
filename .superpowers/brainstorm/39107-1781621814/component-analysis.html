@@ -1,0 +1,85 @@
+<h2>Neo-Brutalism UI Library + shadcn/ui Compatibility</h2>
+<p class="subtitle">How to combine these two libraries effectively</p>
+
+<style>
+  .check { color: #7df752; font-weight: bold; }
+  .warning { color: #FFE500; font-weight: bold; }
+  .info { color: #79F7FF; }
+</style>
+
+<div class="section">
+  <h3>Good News: They're Compatible ✅</h3>
+  <p>Both libraries use the <strong>same approach</strong>: copy-paste components (not npm packages). This means no dependency conflicts.</p>
+</div>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">Neo-Brutalism UI Library</div>
+    <div class="mockup-body">
+      <p><span class="check">✓</span> React + Tailwind CSS</p>
+      <p><span class="check">✓</span> Copy-paste components</p>
+      <p><span class="check">✓</span> Custom brutalist colors</p>
+      <p><span class="check">✓</span> Bold borders, hard shadows</p>
+      <p><span class="warning">!</span> ~20 components</p>
+      <p><span class="warning">!</span> No accessibility primitives</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">shadcn/ui</div>
+    <div class="mockup-body">
+      <p><span class="check">✓</span> React + Tailwind CSS</p>
+      <p><span class="check">✓</span> Copy-paste components</p>
+      <p><span class="check">✓</span> Built on Radix UI</p>
+      <p><span class="check">✓</span> Full accessibility (ARIA)</p>
+      <p><span class="check">✓</span> 50+ components</p>
+      <p><span class="warning">!</span> Default styling (not brutalist)</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Recommended Approach: Use Both Strategically</h3>
+  <p><strong>Base: Neo-Brutalism UI Library</strong> — For the visual aesthetic</p>
+  <ul>
+    <li>Buttons, Cards, Inputs with brutalist styling</li>
+    <li>Custom color palette (pink, cyan, lime, violet, orange)</li>
+    <li>Bold borders and hard shadows built-in</li>
+  </ul>
+
+  <p><strong>Supplement: shadcn/ui</strong> — For complex interactive components</p>
+  <ul>
+    <li>Dialogs, Dropdowns, Command palette (when needed)</li>
+    <li>Sheet (side panel), Toast (notifications)</li>
+    <li>Apply brutalist styling to shadcn components manually</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3>Setup Strategy</h3>
+  <p><strong>Option 1: Start with Neo-Brutalism, add shadcn as needed</strong></p>
+  <ul>
+    <li>Install neo-brutalism-ui-library components first</li>
+    <li>Add shadcn/ui CLI for missing components</li>
+    <li>Override shadcn styles with brutalist CSS</li>
+  </ul>
+
+  <p><strong>Option 2: Start with shadcn/ui, apply brutalist theme</strong></p>
+  <ul>
+    <li>Install shadcn/ui normally</li>
+    <li>Copy neo-brutalism colors to tailwind.config.js</li>
+    <li>Apply borders/shadows globally</li>
+    <li>More flexible, more manual work</li>
+  </ul>
+</div>
+
+<div class="pros-cons">
+  <div class="pros">
+    <h4>My Recommendation: Option 1</h4>
+    <p>Start with neo-brutalism-ui-library for instant aesthetic. Add shadcn components only when you need something specific (like a dialog or complex dropdown). Faster to get the look you want.</p>
+  </div>
+  <div class="cons">
+    <h4>Trade-off</h4>
+    <p>You'll need to manually style shadcn components to match the brutalist aesthetic. But you'd have to do that anyway with Option 2 — just more upfront work.</p>
+  </div>
+</div>

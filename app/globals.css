@@ -40,17 +40,50 @@
 /* Neo-brutalism button base styles */
 @layer components {
   .btn-brutal {
-    @apply border-[3px] border-black px-6 py-3 font-semibold transition-all duration-150;
-    @apply hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5;
-    @apply active:shadow-brutal-sm active:translate-x-0 active:translate-y-0;
+    @apply border-[2px] border-black px-6 py-3 font-semibold transition-all duration-250;
+    @apply hover:shadow-soft hover:-translate-x-0.5 hover:-translate-y-0.5;
   }
 
   .card-brutal {
-    @apply border-[3px] border-black bg-white shadow-brutal transition-all duration-200;
-    @apply hover:shadow-brutal-lg hover:-translate-x-1 hover:-translate-y-1;
+    @apply border-[2px] border-black bg-white shadow-soft transition-all duration-300;
+    @apply hover:shadow-soft-lg hover:-translate-x-1.5 hover:-translate-y-1.5 hover:scale-105;
   }
 
   .input-brutal {
-    @apply border-[3px] border-black px-4 py-2 focus:outline-none;
+    @apply border-[2px] border-black px-4 py-2 focus:outline-none;
+  }
+
+  /* Gradient overlay utilities */
+  .gradient-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gradient-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .gradient-card:hover::before {
+    opacity: 0.5;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    background: inherit;
+    pointer-events: none;
+  }
+
+  .gradient-overlay:hover {
+    opacity: 0.5;
   }
 }

@@ -1,0 +1,112 @@
+<h2>Platform Layout Structure</h2>
+<p class="subtitle">Neo-brutalist grid design for browsing slides</p>
+
+<style>
+  .neo-border { border: 3px solid #000; }
+  .neo-shadow { box-shadow: 4px 4px 0px #000; }
+  .neo-btn {
+    border: 3px solid #000;
+    padding: 12px 24px;
+    background: #FFE500;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  .neo-btn:hover {
+    box-shadow: 4px 4px 0px #000;
+    transform: translate(-2px, -2px);
+  }
+</style>
+
+<div class="section">
+  <h3>Homepage: Masonry Grid Layout</h3>
+  <p>Similar to Dribbble/Pinterest — cards arranged in responsive masonry grid</p>
+</div>
+
+<div class="mockup">
+  <div class="mockup-header">Header Section</div>
+  <div class="mockup-body">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; border: 3px solid #000;">
+      <div style="font-size: 24px; font-weight: 800; letter-spacing: -1px;">HSLIDES</div>
+      <div style="display: flex; gap: 12px;">
+        <div style="padding: 8px 16px; border: 2px solid #000; background: #79F7FF; font-weight: 600; font-size: 14px;">About</div>
+        <div style="padding: 8px 16px; border: 2px solid #000; background: #FFA6F6; font-weight: 600; font-size: 14px;">GitHub</div>
+      </div>
+    </div>
+
+    <div style="padding: 40px 20px; background: #f5f5f5; min-height: 300px;">
+      <div style="margin-bottom: 24px;">
+        <h2 style="font-size: 32px; font-weight: 800; margin: 0 0 8px 0;">Discover HTML Slides</h2>
+        <p style="color: #666; margin: 0;">Beautiful presentations from the community</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <!-- Card 1 -->
+        <div style="background: #fff; border: 3px solid #000; box-shadow: 4px 4px 0px #000; padding: 16px; cursor: pointer;">
+          <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #79F7FF, #A8A6FF); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #000;">
+            Thumbnail
+          </div>
+          <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0;">Modern React Patterns</h3>
+          <p style="font-size: 13px; color: #666; margin: 0;">Explore advanced React patterns</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="background: #fff; border: 3px solid #000; box-shadow: 4px 4px 0px #000; padding: 16px; cursor: pointer;">
+          <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #FFA6F6, #FFE500); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #000;">
+            Thumbnail
+          </div>
+          <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0;">Design Systems 101</h3>
+          <p style="font-size: 13px; color: #666; margin: 0;">Building scalable design systems</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div style="background: #fff; border: 3px solid #000; box-shadow: 4px 4px 0px #000; padding: 16px; cursor: pointer;">
+          <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #7df752, #FFC29F); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #000;">
+            Thumbnail
+          </div>
+          <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0;">CSS Grid Mastery</h3>
+          <p style="font-size: 13px; color: #666; margin: 0;">Advanced layout techniques</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Slide Detail View: Modal/Lightbox</h3>
+  <p>Click card → opens modal with embedded iframe in a brutalist frame</p>
+</div>
+
+<div class="mockup">
+  <div class="mockup-header">Modal Viewer</div>
+  <div class="mockup-body">
+    <div style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; padding: 40px;">
+      <div style="background: #fff; border: 4px solid #000; box-shadow: 8px 8px 0px #000; max-width: 900px; width: 100%; padding: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 20px; font-weight: 800; margin: 0;">Modern React Patterns</h3>
+          <button style="padding: 8px 16px; border: 2px solid #000; background: #FFE500; font-weight: 600; cursor: pointer;">✕</button>
+        </div>
+
+        <div style="aspect-ratio: 16/9; background: #f0f0f0; border: 3px solid #000; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-weight: 600; color: #666;">Embedded Slides iframe</span>
+        </div>
+
+        <div style="display: flex; gap: 12px;">
+          <a href="#" style="flex: 1; padding: 12px; border: 2px solid #000; background: #79F7FF; font-weight: 600; text-align: center; text-decoration: none;">View Full</a>
+          <a href="#" style="flex: 1; padding: 12px; border: 2px solid #000; background: #FFA6F6; font-weight: 600; text-align: center; text-decoration: none;">GitHub</a>
+          <a href="#" style="flex: 1; padding: 12px; border: 2px solid #000; background: #7df752; font-weight: 600; text-align: center; text-decoration: none;">Copy Prompt</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Navigation & Interactions</h3>
+  <ul style="margin: 0; padding-left: 20px;">
+    <li><strong>Hover states:</strong> Cards lift up with shadow offset (translate + box-shadow)</li>
+    <li><strong>Colors:</strong> Each card gets a different brutalist accent color (pink, cyan, lime, yellow, violet)</li>
+    <li><strong>Typography:</strong> Bold, compressed fonts for headings. System fonts for body.</li>
+    <li><strong>Responsiveness:</strong> Grid collapses to 2 columns on tablet, 1 on mobile</li>
+  </ul>
+</div>
